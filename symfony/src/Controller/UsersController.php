@@ -12,8 +12,9 @@ class UsersController extends AbstractController
      */
     public function index()
     {
-        return $this->render('users/index.html.twig', [
-            'controller_name' => 'UsersController',
+        return $this->json([
+            'message' => 'Welcome to your new controller!',
+            'path' => 'src/Controller/UsersController.php',
         ]);
     }
 }
