@@ -1,16 +1,15 @@
 <?php
-
 namespace App\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-
-class UsersController extends AbstractController
+class UsersController extends FOSRestController
 {
     /**
-     * @Route("/users", name="users")
+     * @Rest\Get("/users", name="users")
      */
-    public function index()
+    public function getAction()
     {
         return $this->json([
             'message' => 'Welcome to your new controller!',
