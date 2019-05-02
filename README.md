@@ -5,14 +5,18 @@
 ```bash
 docker-compose up
 ```
-
-### Using Composer
-
-```bash
-docker-compose run composer
-```
-
-Open localhost:80
+Nginx will be available on `localhost:80` and PostgreSQL on `localhost:5432`.
 
 [More info](docs/docker.md)
 
+### Run comands
+
+```bash
+docker-compose run composer <cmd>
+```
+`cmd` - needs commands
+
+### Create user
+```bash
+docker-compose run composer php bin/console fos:user:create test_user
+```
