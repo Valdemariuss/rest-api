@@ -57,6 +57,6 @@ docker-compose run composer php bin/console fos:user:create test_user
 
 ## 3. Use token
 
-### [POST] http://localhost/api/movies
+### [GET] http://localhost/api/movies
 
 ![postman use token](img/auth/token.png)
