@@ -7,7 +7,7 @@ This Docker Compose configuration lets you run easily PHP 7.1 with Nginx, PHP-FP
 It exposes 4 services:
 
 * web (Nginx)
-* php (PHP 7.1 with PHP-FPM)
+* php (PHP 7.3 with PHP-FPM)
 * db (PostgreSQL 10.1)
 * composer
 
