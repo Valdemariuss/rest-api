@@ -16,8 +16,8 @@ class ExceptionController
     /**
      * Converts an Exception to a Response
      *
-     * @param Request                   $request
-     * @param \Exception|\Throwable     $exception
+     * @param Request $request
+     * @param \Exception|\Throwable $exception
      * @param DebugLoggerInterface|null $logger
      *
      * @throws \InvalidArgumentException
@@ -29,7 +29,7 @@ class ExceptionController
         $code = $exception->getStatusCode($exception);
         return new Response(
             json_encode(
-                ['error' => $exception->getMessage(), 'code'=>$code],
+                ['error' => $exception->getMessage(), 'code' => $code],
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
             ),
             $code,

@@ -10,20 +10,19 @@ use App\Entity\Movie;
 
 class MovieType extends AbstractType
 {
-  public function buildForm(FormBuilderInterface $builder, array $options)
-  {
-    $builder
-      ->add('name')
-      ->add('description')
-      ->add('save', SubmitType::class)
-    ;
-  }
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('name')
+            ->add('description')
+            ->add('save', SubmitType::class);
+    }
 
-  public function configureOptions(OptionsResolver $resolver)
-  {
-    $resolver->setDefaults(array(
-      'data_class' => Movie::class,
-      'csrf_protection' => false
-    ));
-  }
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => Movie::class,
+            'csrf_protection' => false
+        ));
+    }
 }
