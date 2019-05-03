@@ -24,3 +24,4 @@ docker-compose run composer php bin/console fos:user:create test_user
 ## API
 
 [Authorization](docs/authorization.md)
+[API routes](docs/api.md)
