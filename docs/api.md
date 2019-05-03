@@ -66,10 +66,62 @@
 ### Sample API response:
 `
 {
-    "timestamp": 1556900472,
+    "timestamp": 1556906935,
     "code": 201,
     "payload": {
-        "status": "ok"
+        "status": "ok",
+        "movie": {
+            "id": 4,
+            "name": "some movie name",
+            "description": "some movie description"
+        }
+    }
+}
+`
+
+## Update movie
+
+### [PUT] http://localhost/movie/{id}
+
+### Headers:
+`Content-Type: application/json`
+
+### Body:
+`
+{
+    "name": "new movie",
+    "description": "new some film about me"
+}
+`
+
+### Sample API response:
+`
+{
+    "timestamp": 1556906801,
+    "code": 200,
+    "payload": {
+        "status": "ok",
+        "movie": {
+            "id": 2,
+            "name": "new movie",
+            "description": "new some film about me"
+        }
+    }
+}
+`
+
+## Delete movie
+
+### [DELETE] http://localhost/movie/{id}
+
+### Sample API response:
+`
+{
+    "timestamp": 1556907691,
+    "code": 200,
+    "payload": {
+        "status": "ok",
+        "message": "Delete movie id - 2"
     }
 }
 `
