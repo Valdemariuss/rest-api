@@ -2,11 +2,9 @@
 
 namespace App\Controller;
 
-use FOS\RestBundle\Util\ExceptionValueMap;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
+use App\Service\ApiService;
 
 /**
  * Сustom exception controller
@@ -22,18 +20,12 @@ class ExceptionController
      *
      * @throws \InvalidArgumentException
      *
-     * @return Response
+     * @return ApiService::error
      */
     public function showAction(Request $request, $exception, DebugLoggerInterface $logger = null)
     {
-        $code = $exception->getStatusCode($exception);
-        return new Response(
-            json_encode(
-                ['error' => $exception->getMessage(), 'code' => $code],
-                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-            ),
-            $code,
-            ['Content-type' => 'application/json']
-        );
+        $code = isset($exception->getStatusCode) ? $exception->getStatusCode() : 400;
+        $mes = $exception->getMessage();
+        return ApiService::error($mes, $code);
     }
 }

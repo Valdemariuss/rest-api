@@ -2,16 +2,18 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\FOSRestController;
-use FOS\RestBundle\Controller\Annotations as Rest;
+use App\Service\ApiService;
 
 class DefaultController extends FOSRestController
 {
+    /**
+     * Default route
+     * @return ApiService::response
+     */
     public function index()
     {
-        return $this->json([
-            'message' => 'Welcome to Rest API!'
-        ]);
+        $data = ['message' => 'Welcome to Rest API!'];
+        return ApiService::response($data);
     }
 }
