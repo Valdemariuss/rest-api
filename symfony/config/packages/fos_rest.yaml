@@ -14,14 +14,6 @@
 #        rules:
 #            - { path: ^/api, prefer_extension: true, fallback_format: json, priorities: [ json, html ] }
 
-
-# fos_rest:
-#     view:
-#         view_response_listener:  true
-#     format_listener:
-#         rules:
-#             - { path: ^/api, prefer_extension: true, fallback_format: json, priorities: [ json ] }
-
 fos_rest:
     routing_loader:
         default_format: json
@@ -37,3 +29,6 @@ fos_rest:
         view_response_listener: 'force'
         formats:
             json: true
+    exception:
+        enabled: true
+        exception_controller: 'App\Controller\ExceptionController::showAction'
